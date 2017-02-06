@@ -15,7 +15,8 @@ end
 subplot(2,1,1)
 yyaxis left             
 hist(Results1,20)    % Set the number of bins to 20 in histogram
-title('Number of arrivals per hour')
+title(['Number of arrivals per hour with experiment times ',...
+    num2str(E)])
 xlabel('Number of arrivals')
 ylabel('Times')
 
@@ -37,8 +38,8 @@ for i = 1:E
     lambda = 120;           % Expected value is 120
     u = rand();             % Random number from 0 to 1
     k = 0;                  % P(X=k)
-    p = exp(-lambda);       % when k=0
-    f = p;
+    p = exp(-lambda);       % pmf, when k=0
+    f = p;                  % cdf
     while u>=f
         p = lambda*p/(k+1);
         f = f+p;
@@ -50,7 +51,8 @@ end
 subplot(2,1,2)
 yyaxis left
 hist(Results2,20)    % Set the number of bins to 20 in histogram
-title('Number of arrivals per hour')
+title(['Number of arrivals per hour with experiment times ',...
+    num2str(E)])
 xlabel('Number of arrivals')
 ylabel('Times')
 
