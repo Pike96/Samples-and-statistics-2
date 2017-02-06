@@ -8,7 +8,7 @@ for i = 1:E, k = 0;
     	j = 1 + floor(20*rand);     % Get Uniform j 1 to 20
         if j <= 10          % Drop j>10
             if (c*rand) < p(j)/0.05	% Accept p(j) if U<p(j)/c, q(j)= 0.05
-                acc = acc+1; X(i) = j; C(i) = k; 
+                acc = acc+1; X(i) = j;
                 break
             else rej = rej+1;	% Reject when cu>pv/qv
             end
