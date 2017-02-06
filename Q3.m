@@ -1,11 +1,19 @@
-S = 100;        % Sample number
-sum = 0;        % sum of samples
-N = zeros(1,S);
-for i = 1:S
-    while sum<=4
-        sum = sum+rand();
-        N(i) = N(i)+1;
-    end
-    sum = 0;
-end
-hist(N)
+clear;
+
+subplot(3,1,1)
+hist(Q3_function(100))
+title('N = 100')
+xlabel('Number of samples')
+ylabel('Times')
+
+subplot(3,1,2)
+hist(Q3_function(1000))
+title('N = 1000')
+xlabel('Number of samples')
+ylabel('Times')
+
+subplot(3,1,3)
+hist(Q3_function(10000))
+title('N = 10000')
+xlabel('Number of samples')
+ylabel('Times')
